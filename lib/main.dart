@@ -36,9 +36,9 @@ void navigateBottomBar(int newIndex){
 }
 // Paginas 
 final List<Widget> _pages = [
-  ShopPage(),
-
-  CartPage(),
+  const ShopPage(),
+  
+  const CartPage(),
 ];
 
   @override
