@@ -1,11 +1,11 @@
 class Drink{
-  final String nome;
-  final String preco;
+  final String name;
+  final String price;
   final String imagePath;
 
   Drink({
-    required this.nome,
-    required this.preco,
+    required this.name,
+    required this.price,
     required this.imagePath,
   });
 }

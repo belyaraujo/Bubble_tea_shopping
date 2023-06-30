@@ -1,5 +1,7 @@
 import 'package:bubble_tea_shop/components/bottom_nav_bar.dart';
+import 'package:bubble_tea_shop/models/shop.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/cart_page.dart';
 import 'pages/shop_page.dart';
@@ -11,10 +13,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bubble Tea Shop',
-      home: HomePage(),
-    );
+    // return MaterialApp(
+    //   title: 'Bubble Tea Shop',
+    //   home: HomePage(),
+    // );
+    return ChangeNotifierProvider(
+      create: (context) => BubbleTeaShop(),
+      builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
+      );
   }
 }
 
@@ -44,7 +53,7 @@ final List<Widget> _pages = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Colors.brown[200],
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
