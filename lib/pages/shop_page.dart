@@ -18,7 +18,9 @@ class _ShopPageState extends State<ShopPage> {
   void goToOrderPage(Drink drink){
     // Navegação para a pagina de pedidos
     Navigator.push(context, MaterialPageRoute(
-      builder: (context) => OrderPage(),
+      builder: (context) => OrderPage(
+        drink: drink,
+      ),
       ),
     );
   }
