@@ -7,13 +7,29 @@ class BubbleTeaShop extends ChangeNotifier{
 
   final List<Drink> _shop = [
     //Pearl milk tea
-    Drink(name: "Pearl milk tea", 
+    Drink(name: "Taiwan Original", 
           price: "15.00",
           imagePath: "lib/images/milk_tea.png",
           ),
-     Drink(name: "Chá gelado", 
+
+     Drink(name: "Nutty Caramel", 
+          price: "18.00",
+          imagePath: "lib/images/nutty.png",
+          ),
+
+    Drink(name: "Sunset Tea", 
           price: "15.00",
-          imagePath: "lib/images/milk_tea.png",
+          imagePath: "lib/images/pink_tea.png",
+          ),
+
+    Drink(name: "Macha Tea", 
+          price: "16.00",
+          imagePath: "lib/images/macha.png",
+          ),
+
+      Drink(name: "Maracuchá", 
+          price: "16.00",
+          imagePath: "lib/images/maracuchá.png",
           ),
     
   ];
