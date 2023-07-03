@@ -6,21 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ShopPage extends StatefulWidget {
-  const ShopPage({super.key});
+  const ShopPage({Key? key});
 
   @override
-  State<ShopPage> createState() => _ShopPageState();
+  _ShopPageState createState() => _ShopPageState();
 }
 
 class _ShopPageState extends State<ShopPage> {
-
-  // Usuário seleciona a bebida, vai para a página de pedidos
-  void goToOrderPage(Drink drink){
-    // Navegação para a pagina de pedidos
-    Navigator.push(context, MaterialPageRoute(
-      builder: (context) => OrderPage(
-        drink: drink,
-      ),
+  void goToOrderPage(Drink drink) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => OrderPage(
+          drink: drink,
+        ),
       ),
     );
   }
@@ -33,26 +32,25 @@ class _ShopPageState extends State<ShopPage> {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
-              // heading
               Text(
                 "Bubble Tea Shop",
                 style: TextStyle(fontSize: 20),
               ),
-              // Lista de bebidas disponíveis
+              SizedBox(height: 10),
               Expanded(
                 child: ListView.builder(
                   itemCount: value.shop.length,
                   itemBuilder: (context, index) {
                     Drink individualDrink = value.shop[index];
-
+                    // Drink individualDrink = value.shop[index];
                     return DrinkTile(
                       drink: individualDrink,
                       onTap: () => goToOrderPage(individualDrink),
-                      );
+                      trailing: Icon(Icons.arrow_forward),
+                    );
                   },
-                  ),
-                )
-              
+                ),
+              ),
             ],
           ),
         ),

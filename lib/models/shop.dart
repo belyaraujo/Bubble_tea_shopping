@@ -11,6 +11,11 @@ class BubbleTeaShop extends ChangeNotifier{
           price: "15.00",
           imagePath: "lib/images/milk_tea.png",
           ),
+     Drink(name: "Chá gelado", 
+          price: "15.00",
+          imagePath: "lib/images/milk_tea.png",
+          ),
+    
   ];
 
   // Lista de bebibas no carrinho do usuário

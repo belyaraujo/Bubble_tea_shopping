@@ -1,4 +1,4 @@
-import 'dart:js';
+//import 'dart:js';
 
 import 'package:bubble_tea_shop/models/drink.dart';
 import 'package:bubble_tea_shop/models/shop.dart';
@@ -54,7 +54,20 @@ class _OrderPageState extends State<OrderPage> {
   //     ),
   //     );
   // }
-  void addToCart(BuildContext context) {
+//   void addToCart(BuildContext context) {
+//   Provider.of<BubbleTeaShop>(context, listen: false).addToCart(widget.drink);
+
+//   Navigator.pop(context);
+
+//   showDialog(
+//     context: context,
+//     builder: (context) => AlertDialog(
+//       title: Text("Adicionado ao carrinho!"),
+//     ),
+//   );
+// }
+
+void addToCart(BuildContext context) {
   Provider.of<BubbleTeaShop>(context, listen: false).addToCart(widget.drink);
 
   Navigator.pop(context);
@@ -149,15 +162,16 @@ class _OrderPageState extends State<OrderPage> {
           ),
 
           // Adicionar no carrinho
-          MaterialButton(
-            child: Text("Adicionar ao carrinho", 
+         MaterialButton(
+          child: Text(
+            "Adicionar ao carrinho",
             style: TextStyle(
-              color: Colors.white
+              color: Colors.white,
               ),
               ),
             color: Colors.brown,
-            onPressed: addToCart,
-            ),
+            onPressed: () => addToCart(context), // Chama a função addToCart com o contexto
+),
         ],
         ),
     );
